@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   delete '/user/:id'       => 'users#dest'
   resources :blogs
   resources :featured_blogs
+  resources :categories
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

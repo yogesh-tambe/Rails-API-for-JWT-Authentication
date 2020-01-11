@@ -6,5 +6,5 @@ class FeaturedBlogsController < ApplicationController
 	def show
 		@featured_blog = FeaturedBlog.find(params[:id])
 		render json: @featured_blog
-  end
+  	end
 end

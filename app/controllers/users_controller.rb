@@ -1,16 +1,16 @@
 class UsersController < ApplicationController
 	# protect_from_forgery with: :null_session
   skip_before_action :verify_authenticity_token
-	before_action :authenticate_user,  only: [:index, :current, :update]
-  before_action :authorize_as_admin, only: [:destroy]
-  before_action :authorize,          only: [:update]
+	# before_action :authenticate_user,  only: [:index, :current, :update]
+  # before_action :authorize_as_admin, only: [:destroy]
+  # before_action :authorize,          only: [:update]
   
   # Should work if the current_user is authenticated.
   def index
     render json: {status: 200, msg: 'Logged-in'}
   end
   
-  def create
+  def created
 	  user = User.new(user_params)
 	  if user.save
 	    render json: {status: 200, msg: 'User was created.'}

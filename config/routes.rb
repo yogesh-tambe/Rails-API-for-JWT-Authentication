@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :blogs
   # post 'user_token' => 'user_token#create'
   root   'home#index'
   get    'auth'            => 'home#auth'
@@ -12,7 +13,6 @@ Rails.application.routes.draw do
   post   '/users/create'   => 'users#create'
   patch  '/user/:id'       => 'users#update'
   delete '/user/:id'       => 'users#dest'
-  resources :blogs
   resources :featured_blogs
   resources :categories
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
